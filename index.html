@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>テストページ</title>
+</head>
+
+<body>
+    <h1>犬のtodo</h1>
+    <img src="images/dog.jpg" alt="dog.jpg" />
+    <ul text="todo">
+        <li>餌やり</li>
+        <li>散歩</li>
+    </ul>
+</body>
+<style>
+    img {
+        width: 200px;
+        height: 200px;
+    }
+
+    h1 {
+        font-family: "Arial", sans-serif;
+    }
+
+    .done {
+        color: darkseagreen;
+        text-decoration: line-through solid black 2px;
+    }
+</style>
+<script>
+    const listItems = document.querySelectorAll("li");
+
+    function toggleDone(e) {
+        if (!e.target.className) {
+            e.target.className = "done";
+        } else {
+            e.target.className = "";
+        }
+    }
+
+    listItems.forEach((item) => {
+        item.addEventListener("click", toggleDone);
+    });
+
+
+
+</script>
+
+</html>
